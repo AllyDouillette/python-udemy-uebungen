@@ -4,7 +4,7 @@ BMI = weight / ((height / 100) ** 2)
 
 print(BMI)
 
-if BMI < 18.5:
+if BMI <= 18.5:
 	print("You are underweight.")
 elif BMI < 25:
 	print("You are a normal weight.")
