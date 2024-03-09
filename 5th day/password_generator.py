@@ -15,3 +15,34 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 
 #Hard Level - Order of characters randomised:
 #e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
+
+# get a password container
+password = ""
+# make a count list:
+counts = [nr_letters, nr_numbers, nr_symbols]
+# make a corresponding list with the possible characters:
+chars = [letters, numbers, symbols]
+# total length is all numbers together!
+for i in range(0, nr_letters + nr_numbers + nr_symbols + 1):
+  # choose a random number between all available categories
+  categoryId = ""
+  while True:
+    categoryId = random.randint(0, len(counts)-1)
+    # check the counts remaining at that position, if we still need more than 0 continue
+    if counts[categoryId] > 0:
+      counts[categoryId] -= 1
+      break
+
+  # now categoryId is something between 0 and 2
+  # get that character set
+  possibleChars = chars[categoryId]
+  # get a random number out of that character sets length
+  charId = random.randint(0, len(possibleChars)-1)
+  # get the associated char
+  newChar = possibleChars[charId]
+  # and smash it at the end of the passwordd
+  password += newChar
+  # just to be sure, null newChar
+  newChar = ""
+
+print(password, len(password))
