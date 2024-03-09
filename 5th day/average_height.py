@@ -8,7 +8,7 @@ for current_height in heights:
   sum = sum + current_height
 
 # at the end we calculate the final sum divided by final count
-avg_height = round(sum / count)
+avg_height = int(round(sum / count, 0))
 
 print(f"""total height = {sum}
 number of students = {count}
