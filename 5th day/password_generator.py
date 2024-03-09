@@ -23,26 +23,19 @@ counts = [nr_letters, nr_numbers, nr_symbols]
 # make a corresponding list with the possible characters:
 chars = [letters, numbers, symbols]
 # total length is all numbers together!
-for i in range(0, nr_letters + nr_numbers + nr_symbols + 1):
-  # choose a random number between all available categories
-  categoryId = ""
-  while True:
-    categoryId = random.randint(0, len(counts)-1)
-    # check the counts remaining at that position, if we still need more than 0 continue
-    if counts[categoryId] > 0:
-      counts[categoryId] -= 1
-      break
+for i in range(0, nr_letters):
+  charId = random.randint(0, len(letters)-1)
+  password += letters[charId]
 
-  # now categoryId is something between 0 and 2
-  # get that character set
-  possibleChars = chars[categoryId]
-  # get a random number out of that character sets length
-  charId = random.randint(0, len(possibleChars)-1)
-  # get the associated char
-  newChar = possibleChars[charId]
-  # and smash it at the end of the passwordd
-  password += newChar
-  # just to be sure, null newChar
-  newChar = ""
+for i in range(0, nr_numbers):
+  charId = random.randint(0, len(numbers)-1)
+  password += numbers[charId]
 
-print(password, len(password))
+for i in range(0, nr_symbols):
+  charId = random.randint(0, len(symbols)-1)
+  password += symbols[charId]
+
+password = list(password)
+random.shuffle(password)
+
+print(password)
