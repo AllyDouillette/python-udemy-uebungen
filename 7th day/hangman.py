@@ -4,9 +4,10 @@ wordgenerator = RandomWord()
 lives = 5
 
 def getWord():
-  return wordgenerator.word(word_min_length = 5, include_parts_of_speech=["nouns"])
+  return wordgenerator.word(word_min_length = 5, include_parts_of_speech=["noun"])
 
 word = getWord()
+print(word)
 
 guessedLetters = []
 def getUserInput():
@@ -57,6 +58,6 @@ while lives > 0 and completed() == False:
     print(f"\n{chosenLetter} is NOT in the word!\nYou have {lives} lives left.\n")
 
 if lives == 0:
-  print(f"The word would've been: {word}")
+  print(f"😶‍🌫️ 😱 😤You lost.\nThe word would've been: {word}. 🤯")
 else:
-  print(f"Congrats, you won – the word is indeed: {word}")
+  print(f"🎉 🥳 🎊 Congrats, you won!\nThe word is indeed: {word}")
