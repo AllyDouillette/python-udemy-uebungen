@@ -30,9 +30,6 @@ def getUserInput():
 
 # generate a random word
 def obscureWord(word, guessedLetters):
-  # gib das Wort mit "versteckten" Buchstaben zurück
-  # also "Esel" und guessed letters = ["s"] -> "_ s _ _"
-  # dafür sorgen dass word und guessed letters alle kleingeschrieben sind
   word.lower()
   guessedLetters = list(map(lambda letter: letter.lower(), guessedLetters))
   obscuredLetterList = []
