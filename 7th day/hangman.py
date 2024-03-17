@@ -1,13 +1,14 @@
 from wonderwords import RandomWord
 wordgenerator = RandomWord()
 
-lives = 5
+lives = 10
+# while lives <= 0:
+#   lives = int(input("Choose the number of lives you want to have: "))
 
 def getWord():
   return wordgenerator.word(word_min_length = 5, include_parts_of_speech=["noun"])
 
 word = getWord()
-print(word)
 
 guessedLetters = []
 def getUserInput():
@@ -52,12 +53,12 @@ while lives > 0 and completed() == False:
   getCurrentState()
   chosenLetter = getUserInput()
   if chosenLetter in list(word.lower()):
-    print(f"\n{chosenLetter} is in the word!\n")
+    print(f"\n✅ {chosenLetter} is in the word!\n")
   else:
     lives -= 1
-    print(f"\n{chosenLetter} is NOT in the word!\nYou have {lives} lives left.\n")
+    print(f"\n❌ {chosenLetter} is NOT in the word!\nYou have {lives} lives left.\n")
 
 if lives == 0:
-  print(f"😶‍🌫️ 😱 😤You lost.\nThe word would've been: {word}. 🤯")
+  print(f"😤 You lost.\n🤯 The word would've been \"{word}\".")
 else:
-  print(f"🎉 🥳 🎊 Congrats, you won!\nThe word is indeed: {word}")
+  print(f"🥳 Congrats, you won!\nThe word is indeed \"{word}\".")
