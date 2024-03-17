@@ -41,7 +41,7 @@ def decrypt(word, shift):
 
 word = "Lol was geht my guys"
 shift = 42
-testEncrypt = encrypt(word, shift)
-testDecrypt = decrypt(testEncrypt, shift)
-print(testEncrypt)
-print(testDecrypt)
+encryptedTestWord = encrypt(word, shift)
+decryptedTestWord = decrypt(encryptedTestWord, shift)
+print(encryptedTestWord)
+print(decryptedTestWord)
