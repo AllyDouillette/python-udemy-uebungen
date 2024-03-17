@@ -1,15 +1,3 @@
-# Old Bag Burger
-#   + Süßkartoffelpommes
-#   + Ketchup und Mayo
-# Tiroler Burger normal
-#   + Philly Cheese Fries
-#   + Jalapeño Mayo 2x
-# Tiroler Burger OHNE BACON MIT VEGANEM PATTY
-#   NIX POMMES
-# Avocadoburger
-#   belgische
-#   + 2x sweet honey mustard
-
 # fill alphabet
 small_alphabet = []
 big_alphabet = []
